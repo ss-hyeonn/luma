@@ -1,0 +1,196 @@
+@charset "UTF-8";
+body {
+  /* 웹사이트에 폰트 적용 */
+  font-family: "Paperlogy";
+}
+
+header {
+  font-family: "토스폰트";
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+header #top {
+  display: flex;
+  justify-content: space-between; /* 좌우 끝으로 배치 */
+  align-items: center;
+  height: 8vh;
+  padding: 3px 68px 0 88px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.5);
+}
+header #title {
+  float: left;
+}
+header #title h1 img {
+  width: 175px;
+}
+header #gnb > ul {
+  display: flex;
+  gap: 0px;
+}
+header #gnb li {
+  cursor: pointer;
+}
+header #gnb ul li:not(:last-child)::after {
+  content: "|";
+  margin: 0 10px;
+}
+header #gnb li:last-child {
+  position: relative;
+}
+header #gnb li:last-child:hover .sub {
+  display: inline-block;
+}
+header #gnb > ul > li > a {
+  text-decoration: none;
+  color: #4D4D4D;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  padding: 35px 0;
+}
+header #gnb a:hover {
+  color: #ffc070;
+  transform: translateY(3px);
+}
+header #gnb .sub {
+  background: #ffc070;
+  padding: 10px 10px;
+  position: absolute;
+  top: 70px;
+  right: 0px;
+  /*outline: 3px solid #000;*/
+  display: none;
+}
+header #gnb .sub li a {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  padding: 15px 0;
+}
+header #gnb .sub li::before,
+header #gnb .sub li::after {
+  content: none; /* 콘텐츠 제거 */
+  display: none; /* 가상 요소 숨기기 */
+}
+header #sns {
+  float: right;
+}
+header #sns ul {
+  display: flex;
+  gap: 15px;
+}
+header #sns li {
+  cursor: pointer;
+}
+
+#portfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  height: 100vh;
+}
+#portfolio #p_wrap {
+  width: 75%;
+  height: 70%;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#portfolio #p_wrap h1 {
+  text-align: center;
+  font-size: 40px;
+  margin: 0.3em 0 0.7em 0;
+  color: #ffc070;
+}
+#portfolio #p_wrap h2 {
+  color: #4D4D4D;
+}
+#portfolio .tab_menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 50%;
+}
+#portfolio .tab_menu li {
+  width: 25%;
+  text-align: center;
+}
+#portfolio .tab_menu a {
+  display: block;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  padding: 0.5em 0.5em;
+  line-height: 1.5em;
+  border-bottom: 3px solid #ccc;
+  transition: all 0.2s ease-in-out;
+}
+#portfolio .tab_menu a:hover,
+#portfolio .tab_menu a.active {
+  border-bottom: 3px solid #ffc070;
+  color: #ffc070;
+}
+#portfolio .tab_contents {
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  height: 75%;
+  width: 100%;
+  position: relative;
+}
+#portfolio .tab_contents article {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#portfolio .tab_contents article ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#portfolio .tab_contents article li {
+  width: 50%;
+  height: 600px;
+  background: #444;
+  position: relative;
+}
+#portfolio .tab_contents article li img {
+  width: 100%;
+  height: 100%;
+}
+#portfolio .tab_contents article li .tab_text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 30px;
+  background: rgba(0, 0, 0, 0.4666666667);
+  color: #fff;
+  font-size: 1.1em;
+  opacity: 0;
+}
+#portfolio .tab_contents article li:hover .tab_text {
+  opacity: 1;
+  transition: all 1s;
+}
+#portfolio .tab_contents article.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}/*# sourceMappingURL=sub_style.css.map */
