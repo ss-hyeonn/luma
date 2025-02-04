@@ -2,10 +2,12 @@
 :root {
   /* 웹사이트에 폰트 적용 */
   font-family: "Paperlogy";
+  font-weight: 400;
 }
 
 header {
   font-family: "토스폰트";
+  font-size: 18px;
   position: fixed;
   width: 100%;
   z-index: 999;
@@ -14,7 +16,7 @@ header #top {
   display: flex;
   justify-content: space-between; /* 좌우 끝으로 배치 */
   align-items: center;
-  height: 8vh;
+  height: 80px;
   padding: 3px 68px 0 88px;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -89,7 +91,6 @@ header #sns li {
 main {
   height: 100vh;
   overflow: hidden;
-  font-family: "Paperlogy";
 }
 
 .container .area {
@@ -100,7 +101,7 @@ main {
   background: #fcc;
 }
 .container #c_introduction {
-  background: #cfc;
+  background: #ffc070;
   display: flex; /* 부모 요소에서 flexbox 설정 */
   flex-direction: column; /* 자식 요소들을 수직 방향으로 정렬 */
   justify-content: center; /* 자식 요소들을 수직 중앙 정렬 */
@@ -109,17 +110,18 @@ main {
 }
 .container #c_introduction #c_wrap {
   width: 80%;
-  height: 75%;
+  height: calc(100% - 100px);
+  padding-top: 80px;
 }
 .container #c_introduction #c_wrap #c_intro_text {
   width: 100%;
-  height: 40%;
+  height: 35%;
   color: #fff;
 }
 .container #c_introduction #c_wrap #c_intro_text h3 {
-  font-size: 35px;
+  font-size: 38px;
   line-height: 1.5;
-  font-weight: bold;
+  font-weight: 700;
 }
 .container #c_introduction #c_wrap #c_intro_text .into_Title::after {
   content: "";
@@ -128,10 +130,9 @@ main {
   border-bottom: 5px solid #fff;
 }
 .container #c_introduction #c_wrap #c_intro_text p {
-  font-size: 16px;
-  line-height: 1.2;
+  font-size: 17px;
+  line-height: 1.25;
   margin-top: 30px;
-  font-weight: 200;
 }
 .container #c_introduction #c_wrap #obj_list {
   display: flex; /* 부모 요소에서 flexbox 설정 */
@@ -139,7 +140,6 @@ main {
   justify-content: center; /* 자식 요소들을 수직 중앙 정렬 */
   align-items: center;
   width: 100%;
-  height: 60%;
   color: #4D4D4D;
 }
 .container #c_introduction #c_wrap #obj_list ul {
@@ -153,7 +153,6 @@ main {
   background: #fff;
   width: 21%;
   padding: 30px 20px;
-  height: 110%;
 }
 .container #c_introduction #c_wrap #obj_list ul h3 {
   margin-top: 10px;
@@ -163,7 +162,6 @@ main {
 .container #c_introduction #c_wrap #obj_list ul .list_text {
   margin-top: 23px;
   font-size: 15px;
-  font-weight: lighter;
   line-height: 1.2;
 }
 .container #c_introduction #c_wrap #obj_list ul img {
@@ -176,9 +174,10 @@ main {
 .container #c_introduction #c_wrap #obj_list ul .btn {
   border: 1px solid #4D4D4D;
   text-align: center;
-  height: 3vh;
+  height: 3%;
   line-height: 3vh;
   transition: all 0.2s;
+  font-weight: 500;
 }
 .container #c_introduction #c_wrap #obj_list ul .btn:hover {
   background: #ffc070;
@@ -264,10 +263,24 @@ main {
   height: 300px;
   background: #444;
   position: relative;
+  overflow: hidden;
+  position: relative;
 }
 .container #portfolio .tab_contents article li img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
+  transition: transform 0.9s ease-in-out;
+  align-items: center;
+  transform-origin: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: translate(-50%, -50%) scale(1); /* 중앙 정렬 */
+}
+.container #portfolio .tab_contents article li:hover img {
+  transform: translate(-50%, -50%) scale(1.2); /* 확대 시 중앙 유지 */
 }
 .container #portfolio .tab_contents article li .tab_text {
   position: absolute;
@@ -326,14 +339,13 @@ main {
   /*outline: 3px solid #f00; */
 }
 .container #foot #f_wrap #proj_q h2 {
-  font-size: 30px;
+  font-size: 32px;
   color: #000;
-  font-weight: 600;
+  font-weight: 500;
 }
 .container #foot #f_wrap #proj_q h3 {
   font-size: 18px;
   margin: 30px 0;
-  font-weight: 300;
 }
 .container #foot #f_wrap #proj_q p {
   text-align: center; /* 가로 중앙 */
@@ -341,7 +353,7 @@ main {
   width: 200px;
   height: 50px;
   border: 3px solid #fff;
-  color: #333;
+  color: #000;
   font-size: 16px;
   border-radius: 6px;
   margin: 0 auto;
@@ -352,7 +364,6 @@ main {
 }
 .container #foot #f_wrap #photo_r {
   margin-top: 5%;
-  text-align: center;
   height: 30%;
   width: 70%;
 }
@@ -365,14 +376,53 @@ main {
 .container #foot #f_wrap #photo_r #review .re_section {
   border: 2px solid #ffc070;
   width: 25%;
-  font-weight: 300;
   border-radius: 19px;
   padding: 20px;
+  display: flex;
+  gap: 15px;
 }
-.container #foot #f_wrap #photo_r #review > P {
+.container #foot #f_wrap #photo_r #review .re_section .icon {
+  display: flex;
+  align-items: center;
+  /* 사람 머리 */
+  /* 사람 몸 */
+}
+.container #foot #f_wrap #photo_r #review .re_section .icon .login-icon {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.container #foot #f_wrap #photo_r #review .re_section .icon .login-icon::before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
+.container #foot #f_wrap #photo_r #review .re_section .icon .login-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 15px;
+  background-color: white;
+  border-radius: 15px/7.5px;
+}
+.container #foot #f_wrap #photo_r #review .re_section .re_section_t > P {
   line-height: 1.5;
   font-size: 15px;
   text-align: left;
+  font-weight: 400;
 }
 .container #foot #f_wrap #photo_r .re_section:hover {
   padding: 30px;
@@ -392,15 +442,13 @@ main {
 }
 .container #foot_b {
   font-weight: 300;
+  font-size: 15px;
   height: 15%;
-  width: 100%;
+  width: 70%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-end;
   padding: 25px;
-}
-.container #foot_b ul {
-  font-weight: Thin;
 }
 .container #foot_b li {
   line-height: 1.2;

@@ -1,16 +1,21 @@
 :root {
     /* 웹사이트에 폰트 적용 */
-    font-family:'Paperlogy';
+    font-family: 'Paperlogy';
+    font-weight: 400;
+    
+   
+    
     
 } 
+
 $main_color:#ffc070;
 $sub_color:#4D4D4D;
-header{font-family: '토스폰트' ;
+header{font-family: '토스폰트' ; font-size: 18px;
     #top{
         display: flex;
         justify-content: space-between; /* 좌우 끝으로 배치 */
         align-items: center;
-        height:8vh;
+        height:80px;
         padding:3px 68px 0 88px ;
         backdrop-filter: blur(10px);
         background: rgba(255, 255, 255, 0.5)
@@ -42,7 +47,7 @@ header{font-family: '토스폰트' ;
             content: none;  /* 콘텐츠 제거 */
             display: none;   /* 가상 요소 숨기기 */
 }
-       
+  
 
     }
     #sns{float: right;
@@ -54,7 +59,7 @@ header{font-family: '토스폰트' ;
 
 
 main{height: 100vh; overflow: hidden;
-    font-family:'Paperlogy';}
+    }
 
 .container{
    
@@ -62,16 +67,16 @@ main{height: 100vh; overflow: hidden;
     #intro{background: #fcc;}
 
 
-    #c_introduction{background: #cfc;
+    #c_introduction{background: $main_color;
         display: flex;            /* 부모 요소에서 flexbox 설정 */
         flex-direction: column;   /* 자식 요소들을 수직 방향으로 정렬 */
         justify-content: center;  /* 자식 요소들을 수직 중앙 정렬 */
         align-items: center;      /* 자식 요소들을 수평 중앙 정렬 */
         height: 100vh;     
-        #c_wrap{width:80%; height:75%;
-            #c_intro_text{width:100%; height: 40%; color: #fff;
+        #c_wrap{width:80%; height:calc(100% - 100px); padding-top: 80px;
+            #c_intro_text{width:100%; height: 35%; color: #fff;
                 
-                h3{font-size: 35px;line-height: 1.5; font-weight: bold;}
+                h3{font-size: 38px;line-height: 1.5; font-weight: 700;}
                 .into_Title::after {
                     content: "";
                     display: block;
@@ -81,7 +86,7 @@ main{height: 100vh; overflow: hidden;
                    
                     }
         
-                p{font-size: 16px; line-height: 1.2; margin-top: 30px; font-weight:200;}
+                p{font-size: 17px; line-height: 1.25; margin-top: 30px;}
 
 
             
@@ -92,22 +97,21 @@ main{height: 100vh; overflow: hidden;
                 justify-content: center;  /* 자식 요소들을 수직 중앙 정렬 */
                 align-items: center;
                 width: 100%;
-                height: 60%;                color: $sub_color;
+                color: $sub_color;
 
                 ul{
                     display: flex; justify-content: space-between; 
                     width: 100%;  // 부모 요소 너비 맞추기
                     height: 100%;
                     
-                    li{font-size: 15px; background: #fff; width: 21% ;padding:30px 20px; height: 110%;
-                       
+                    li{font-size: 15px; background: #fff; width: 21% ;padding:30px 20px;
                         
                     }
-                    h3{margin-top: 10px;font-size: 23px;font-weight:600 ;}
-                    .list_text{margin-top: 23px; font-size: 15px; font-weight:lighter; line-height: 1.2;}
+                    h3{margin-top: 10px;font-size: 23px; font-weight: 600;}
+                    .list_text{margin-top: 23px; font-size: 15px;  line-height: 1.2;}
                     img{object-fit: cover; width: 100%; height: 290px;  margin: 25px 0 ;}
-                    .btn{border: 1px solid $sub_color; text-align: center;  height: 3vh; 
-                        line-height: 3vh; transition:all .2s;
+                    .btn{border: 1px solid $sub_color; text-align: center;  height: 3%; 
+                        line-height: 3vh; transition:all .2s; font-weight: 500;
                     }
 
                     .btn:hover{background: $main_color; color: #fff; border: 1px solid #fff;}
@@ -150,9 +154,22 @@ main{height: 100vh; overflow: hidden;
                     opacity: 0;  transform: translateY(20px);
                     transition: opacity 0.3s ease, transform 0.3s ease; 
                 ul{display: flex; justify-content: space-between; flex-wrap: wrap;}
-                li{width:25%; height: 300px; background: #444; position: relative;
+                li{width:25%; height: 300px; background: #444; position: relative; overflow: hidden;
+                    position: relative;
                   }
-                li img{width:100%; height: 100%; }
+                li img{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 100%;
+                    height: 100%;
+                    transition: transform 0.9s ease-in-out; align-items: center;
+                    transform-origin: center; 
+                    object-fit: cover;
+                    transform: translate(-50%, -50%) scale(1); /* 중앙 정렬 */
+                   }
+
+                li:hover img{transform: translate(-50%, -50%) scale(1.2); /* 확대 시 중앙 유지 */}
                 li .tab_text{ position: absolute;
                     top: 0; left: 0;    
                     width: 100%; height: 100%;
@@ -193,14 +210,14 @@ main{height: 100vh; overflow: hidden;
                     
                 
                     /*outline: 3px solid #f00; */
-                    h2{font-size:30px; color: #000;font-weight: 600; }
-                    h3{font-size: 18px; margin: 30px 0 ; font-weight: 300;}
+                    h2{font-size:32px; color: #000; font-weight: 500;}
+                    h3{font-size: 18px; margin: 30px 0 ; }
                     p{text-align: center;   /* 가로 중앙 */
                         line-height: 50px;    /* 높이와 동일하게 설정하면 세로 중앙 */
                         width: 200px;
                         height: 50px;
                         border: 3px solid #fff;
-                        color: #333;
+                        color: #000;
                         font-size: 16px;
                         border-radius: 6px; margin: 0 auto;
                         transition: all .2s;}
@@ -208,14 +225,54 @@ main{height: 100vh; overflow: hidden;
                     }
 
                 #photo_r{margin-top: 5%;
-                    text-align: center; height:30% ;width: 70%;
+                     height:30% ;width: 70%;
                     #review{display: flex; gap: 20px; justify-content: space-between; width: 100%;
-
-                          .re_section{border: 2px solid $main_color; width: 25%; font-weight:300;
-                            border-radius: 19px; padding: 20px;
                         
+                        
+
+                          .re_section{border: 2px solid $main_color; width: 25%; 
+                                border-radius: 19px; padding: 20px; display: flex; gap: 15px;
+                                .icon{display: flex; align-items: center;
+                                .login-icon {
+                                    position: relative;
+                                    display: inline-block;
+                                    width: 50px;
+                                    height: 50px;
+                                    border-radius: 50%;
+                                    background-color: #4CAF50;
+                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                                }
+                                
+                                /* 사람 머리 */
+                                .login-icon::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 15%;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    width: 20px;
+                                    height: 20px;
+                                    background-color: white;
+                                    border-radius: 50%;
+                                }
+                                
+                                /* 사람 몸 */
+                                .login-icon::after {
+                                    content: '';
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    width: 30px;
+                                    height: 15px;
+                                    background-color: white;
+                                    border-radius: 15px / 7.5px;
+                                }
                             }
-                            >P{line-height: 1.5; font-size: 15px; text-align: left;}}  
+                        
+                          
+                            .re_section_t >P{line-height: 1.5; font-size: 15px; text-align: left; font-weight: 400;}
+                            }    }
                             .re_section:hover{padding: 30px; z-index: 9999;}
                         
                               
@@ -232,10 +289,10 @@ main{height: 100vh; overflow: hidden;
 
 
                 }
-        #foot_b{font-weight: 300;
-                height:15% ;width: 100%;
-                display: flex; justify-content: space-around;align-items: flex-end; padding: 25px;
-                ul{font-weight:  Thin;}
+        #foot_b{font-weight: 300; font-size: 15px;
+                height:15% ;width: 70%;
+                display: flex; justify-content:space-between;align-items: flex-end; padding: 25px;
+                ul{}
                 li{line-height: 1.2;}
 
                 
