@@ -2,15 +2,11 @@
     /* 웹사이트에 폰트 적용 */
     font-family: 'Paperlogy';
     font-weight: 400;
-    
-   
-    
-    
-} 
+   } 
 
-$main_color:#ffc070;
+$main_color:#ed9f3d/*#ffc173/*#ffa508/*#ffbf00*/;
 $sub_color:#4D4D4D;
-header{font-family: '토스폰트' ; font-size: 18px;
+header{font-size: 18px; font-weight: 700;
     #top{
         display: flex;
         justify-content: space-between; /* 좌우 끝으로 배치 */
@@ -35,12 +31,18 @@ header{font-family: '토스폰트' ; font-size: 18px;
         li:last-child{position: relative;}
         li:last-child:hover .sub{display: inline-block;}
         >ul>li>a{text-decoration: none; color: $sub_color; display: inline-block;
-          transition: transform 0.3s ease; padding: 35px 0;} 
+          transition: transform 0.3s ease; padding: 35px 0; margin:0 1.2em ;} 
         a:hover{color:$main_color;  transform: translateY(3px);}
-        .sub {background: $main_color; padding: 10px 10px; position: absolute;top: 70px;right: 0px;
-             /*outline: 3px solid #000;*/  display:none ;}
-     
-        .sub li a{text-decoration: none; color: #fff; display: inline-block;
+        .sub{background: rgba(77, 77, 77, 0.8666666667);
+        padding: 10px 20px;
+        position: absolute;
+        top: 80px;
+        right: 0px;
+        /* outline: 3px solid #000; */
+        display: none;
+        margin:0 5%;}
+        .sub li{text-align: center;}   
+        .sub li a{text-decoration: none; color: $main_color; display: inline-block;
             transition: transform 0.3s ease; padding: 15px 0;}
         .sub li::before,
         .sub li::after {
@@ -64,10 +66,30 @@ main{height: 100vh; overflow: hidden;
 .container{
    
     .area{width: 100%; height: 100vh;}
-    #intro{background: #fcc;}
+    #intro{background: #fcc;
+        .mp4 {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+            }
+            .mp4 video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                transform: translate(-50%, -50%);
+            }
+        }}
 
 
-    #c_introduction{background: $main_color;
+
+    #c_introduction{background: linear-gradient(135deg,#ffc173 ,$main_color,#784c14); 
         display: flex;            /* 부모 요소에서 flexbox 설정 */
         flex-direction: column;   /* 자식 요소들을 수직 방향으로 정렬 */
         justify-content: center;  /* 자식 요소들을 수직 중앙 정렬 */
@@ -76,17 +98,11 @@ main{height: 100vh; overflow: hidden;
         #c_wrap{width:80%; height:calc(100% - 100px); padding-top: 80px;
             #c_intro_text{width:100%; height: 35%; color: #fff;
                 
-                h3{font-size: 38px;line-height: 1.5; font-weight: 700;}
-                .into_Title::after {
-                    content: "";
-                    display: block;
-                    width: 50px; /* 원하는 길이 */
-                    border-bottom: 5px solid #fff;
-
-                   
-                    }
-        
-                p{font-size: 17px; line-height: 1.25; margin-top: 30px;}
+                h3{font-size: 38px;line-height: 1.2; font-weight: 700;
+                    span{font-size: 22px;}
+                }
+                
+                p{font-size: 17px; line-height: 1.3; margin-top: 30px; font-weight: 500;}
 
 
             
@@ -165,7 +181,7 @@ main{height: 100vh; overflow: hidden;
                     height: 100%;
                     transition: transform 0.9s ease-in-out; align-items: center;
                     transform-origin: center; 
-                    object-fit: cover;
+                   
                     transform: translate(-50%, -50%) scale(1); /* 중앙 정렬 */
                    }
 
@@ -292,7 +308,7 @@ main{height: 100vh; overflow: hidden;
         #foot_b{font-weight: 300; font-size: 15px;
                 height:15% ;width: 70%;
                 display: flex; justify-content:space-between;align-items: flex-end; padding: 25px;
-                ul{}
+                
                 li{line-height: 1.2;}
 
                 
@@ -305,6 +321,6 @@ main{height: 100vh; overflow: hidden;
              
        
         
-    }
+    
 
 

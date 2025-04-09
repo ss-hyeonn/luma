@@ -6,8 +6,8 @@
 }
 
 header {
-  font-family: "토스폰트";
   font-size: 18px;
+  font-weight: 700;
   position: fixed;
   width: 100%;
   z-index: 999;
@@ -51,23 +51,28 @@ header #gnb > ul > li > a {
   display: inline-block;
   transition: transform 0.3s ease;
   padding: 35px 0;
+  margin: 0 1.2em;
 }
 header #gnb a:hover {
-  color: #ffc070;
+  color: #ed9f3d;
   transform: translateY(3px);
 }
 header #gnb .sub {
-  background: #ffc070;
-  padding: 10px 10px;
+  background: rgba(77, 77, 77, 0.8666666667);
+  padding: 10px 20px;
   position: absolute;
-  top: 70px;
+  top: 80px;
   right: 0px;
-  /*outline: 3px solid #000;*/
+  /* outline: 3px solid #000; */
   display: none;
+  margin: 0 5%;
+}
+header #gnb .sub li {
+  text-align: center;
 }
 header #gnb .sub li a {
   text-decoration: none;
-  color: #fff;
+  color: #ed9f3d;
   display: inline-block;
   transition: transform 0.3s ease;
   padding: 15px 0;
@@ -100,41 +105,58 @@ main {
 .container #intro {
   background: #fcc;
 }
-.container #c_introduction {
-  background: #ffc070;
+.container #intro .mp4 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.container #intro .mp4 video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+#c_introduction {
+  background: linear-gradient(135deg, #ffc173, #ed9f3d, #784c14);
   display: flex; /* 부모 요소에서 flexbox 설정 */
   flex-direction: column; /* 자식 요소들을 수직 방향으로 정렬 */
   justify-content: center; /* 자식 요소들을 수직 중앙 정렬 */
   align-items: center; /* 자식 요소들을 수평 중앙 정렬 */
   height: 100vh;
 }
-.container #c_introduction #c_wrap {
+#c_introduction #c_wrap {
   width: 80%;
   height: calc(100% - 100px);
   padding-top: 80px;
 }
-.container #c_introduction #c_wrap #c_intro_text {
+#c_introduction #c_wrap #c_intro_text {
   width: 100%;
   height: 35%;
   color: #fff;
 }
-.container #c_introduction #c_wrap #c_intro_text h3 {
+#c_introduction #c_wrap #c_intro_text h3 {
   font-size: 38px;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: 700;
 }
-.container #c_introduction #c_wrap #c_intro_text .into_Title::after {
-  content: "";
-  display: block;
-  width: 50px; /* 원하는 길이 */
-  border-bottom: 5px solid #fff;
+#c_introduction #c_wrap #c_intro_text h3 span {
+  font-size: 22px;
 }
-.container #c_introduction #c_wrap #c_intro_text p {
+#c_introduction #c_wrap #c_intro_text p {
   font-size: 17px;
-  line-height: 1.25;
+  line-height: 1.3;
   margin-top: 30px;
+  font-weight: 500;
 }
-.container #c_introduction #c_wrap #obj_list {
+#c_introduction #c_wrap #obj_list {
   display: flex; /* 부모 요소에서 flexbox 설정 */
   flex-direction: column; /* 자식 요소들을 수직 방향으로 정렬 */
   justify-content: center; /* 자식 요소들을 수직 중앙 정렬 */
@@ -142,36 +164,36 @@ main {
   width: 100%;
   color: #4D4D4D;
 }
-.container #c_introduction #c_wrap #obj_list ul {
+#c_introduction #c_wrap #obj_list ul {
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 100%;
 }
-.container #c_introduction #c_wrap #obj_list ul li {
+#c_introduction #c_wrap #obj_list ul li {
   font-size: 15px;
   background: #fff;
   width: 21%;
   padding: 30px 20px;
 }
-.container #c_introduction #c_wrap #obj_list ul h3 {
+#c_introduction #c_wrap #obj_list ul h3 {
   margin-top: 10px;
   font-size: 23px;
   font-weight: 600;
 }
-.container #c_introduction #c_wrap #obj_list ul .list_text {
+#c_introduction #c_wrap #obj_list ul .list_text {
   margin-top: 23px;
   font-size: 15px;
   line-height: 1.2;
 }
-.container #c_introduction #c_wrap #obj_list ul img {
+#c_introduction #c_wrap #obj_list ul img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 290px;
   margin: 25px 0;
 }
-.container #c_introduction #c_wrap #obj_list ul .btn {
+#c_introduction #c_wrap #obj_list ul .btn {
   border: 1px solid #4D4D4D;
   text-align: center;
   height: 3%;
@@ -179,19 +201,20 @@ main {
   transition: all 0.2s;
   font-weight: 500;
 }
-.container #c_introduction #c_wrap #obj_list ul .btn:hover {
-  background: #ffc070;
+#c_introduction #c_wrap #obj_list ul .btn:hover {
+  background: #ed9f3d;
   color: #fff;
   border: 1px solid #fff;
 }
-.container #portfolio {
+
+#portfolio {
   display: flex;
   justify-content: center;
   align-items: center;
   background: #fff;
   height: 100vh;
 }
-.container #portfolio #p_wrap {
+#portfolio #p_wrap {
   width: 75%;
   height: 70%;
   color: #000;
@@ -200,27 +223,27 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.container #portfolio #p_wrap h1 {
+#portfolio #p_wrap h1 {
   text-align: center;
   font-size: 40px;
   margin: 0.3em 0 0.7em 0;
-  color: #ffc070;
+  color: #ed9f3d;
   font-weight: 600;
 }
-.container #portfolio #p_wrap h2 {
+#portfolio #p_wrap h2 {
   color: #4D4D4D;
 }
-.container #portfolio .tab_menu {
+#portfolio .tab_menu {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
   width: 50%;
 }
-.container #portfolio .tab_menu li {
+#portfolio .tab_menu li {
   width: 25%;
   text-align: center;
 }
-.container #portfolio .tab_menu a {
+#portfolio .tab_menu a {
   display: block;
   font-size: 16px;
   color: #000;
@@ -230,12 +253,12 @@ main {
   border-bottom: 3px solid #ccc;
   transition: all 0.2s ease-in-out;
 }
-.container #portfolio .tab_menu a:hover,
-.container #portfolio .tab_menu a.active {
-  border-bottom: 3px solid #ffc070;
-  color: #ffc070;
+#portfolio .tab_menu a:hover,
+#portfolio .tab_menu a.active {
+  border-bottom: 3px solid #ed9f3d;
+  color: #ed9f3d;
 }
-.container #portfolio .tab_contents {
+#portfolio .tab_contents {
   padding-top: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -244,7 +267,7 @@ main {
   width: 100%;
   position: relative;
 }
-.container #portfolio .tab_contents article {
+#portfolio .tab_contents article {
   width: 100%;
   height: 100%;
   visibility: hidden;
@@ -253,12 +276,12 @@ main {
   transform: translateY(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.container #portfolio .tab_contents article ul {
+#portfolio .tab_contents article ul {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.container #portfolio .tab_contents article li {
+#portfolio .tab_contents article li {
   width: 25%;
   height: 300px;
   background: #444;
@@ -266,7 +289,7 @@ main {
   overflow: hidden;
   position: relative;
 }
-.container #portfolio .tab_contents article li img {
+#portfolio .tab_contents article li img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -275,14 +298,12 @@ main {
   transition: transform 0.9s ease-in-out;
   align-items: center;
   transform-origin: center;
-  -o-object-fit: cover;
-     object-fit: cover;
   transform: translate(-50%, -50%) scale(1); /* 중앙 정렬 */
 }
-.container #portfolio .tab_contents article li:hover img {
+#portfolio .tab_contents article li:hover img {
   transform: translate(-50%, -50%) scale(1.2); /* 확대 시 중앙 유지 */
 }
-.container #portfolio .tab_contents article li .tab_text {
+#portfolio .tab_contents article li .tab_text {
   position: absolute;
   top: 0;
   left: 0;
@@ -298,16 +319,17 @@ main {
   font-size: 1.1em;
   opacity: 0;
 }
-.container #portfolio .tab_contents article li:hover .tab_text {
+#portfolio .tab_contents article li:hover .tab_text {
   opacity: 1;
   transition: all 1s;
 }
-.container #portfolio .tab_contents article.active {
+#portfolio .tab_contents article.active {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
 }
-.container #foot {
+
+#foot {
   background: #fff;
   display: flex; /* 부모 요소에서 flexbox 설정 */
   flex-direction: column; /* 자식 요소들을 수직 방향으로 정렬 */
@@ -315,7 +337,7 @@ main {
   align-items: center; /* 자식 요소들을 수평 중앙 정렬 */
   height: 100vh;
 }
-.container #foot #f_wrap {
+#foot #f_wrap {
   width: 100%;
   height: 85%;
   margin: 0 auto;
@@ -324,10 +346,10 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.container #foot #f_wrap #proj_q {
+#foot #f_wrap #proj_q {
   color: #4D4D4D;
   margin-top: 8%;
-  background: linear-gradient(45deg, #ffc070, #fee2bd);
+  background: linear-gradient(45deg, #ed9f3d, #fee2bd);
   text-align: center;
   height: 30%;
   width: 100%;
@@ -338,16 +360,16 @@ main {
   justify-content: center;
   /*outline: 3px solid #f00; */
 }
-.container #foot #f_wrap #proj_q h2 {
+#foot #f_wrap #proj_q h2 {
   font-size: 32px;
   color: #000;
   font-weight: 500;
 }
-.container #foot #f_wrap #proj_q h3 {
+#foot #f_wrap #proj_q h3 {
   font-size: 18px;
   margin: 30px 0;
 }
-.container #foot #f_wrap #proj_q p {
+#foot #f_wrap #proj_q p {
   text-align: center; /* 가로 중앙 */
   line-height: 50px; /* 높이와 동일하게 설정하면 세로 중앙 */
   width: 200px;
@@ -359,35 +381,35 @@ main {
   margin: 0 auto;
   transition: all 0.2s;
 }
-.container #foot #f_wrap #proj_q p:hover {
+#foot #f_wrap #proj_q p:hover {
   background: #fff;
 }
-.container #foot #f_wrap #photo_r {
+#foot #f_wrap #photo_r {
   margin-top: 5%;
   height: 30%;
   width: 70%;
 }
-.container #foot #f_wrap #photo_r #review {
+#foot #f_wrap #photo_r #review {
   display: flex;
   gap: 20px;
   justify-content: space-between;
   width: 100%;
 }
-.container #foot #f_wrap #photo_r #review .re_section {
-  border: 2px solid #ffc070;
+#foot #f_wrap #photo_r #review .re_section {
+  border: 2px solid #ed9f3d;
   width: 25%;
   border-radius: 19px;
   padding: 20px;
   display: flex;
   gap: 15px;
 }
-.container #foot #f_wrap #photo_r #review .re_section .icon {
+#foot #f_wrap #photo_r #review .re_section .icon {
   display: flex;
   align-items: center;
   /* 사람 머리 */
   /* 사람 몸 */
 }
-.container #foot #f_wrap #photo_r #review .re_section .icon .login-icon {
+#foot #f_wrap #photo_r #review .re_section .icon .login-icon {
   position: relative;
   display: inline-block;
   width: 50px;
@@ -396,7 +418,7 @@ main {
   background-color: #4CAF50;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-.container #foot #f_wrap #photo_r #review .re_section .icon .login-icon::before {
+#foot #f_wrap #photo_r #review .re_section .icon .login-icon::before {
   content: "";
   position: absolute;
   top: 15%;
@@ -407,7 +429,7 @@ main {
   background-color: white;
   border-radius: 50%;
 }
-.container #foot #f_wrap #photo_r #review .re_section .icon .login-icon::after {
+#foot #f_wrap #photo_r #review .re_section .icon .login-icon::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -418,29 +440,30 @@ main {
   background-color: white;
   border-radius: 15px/7.5px;
 }
-.container #foot #f_wrap #photo_r #review .re_section .re_section_t > P {
+#foot #f_wrap #photo_r #review .re_section .re_section_t > P {
   line-height: 1.5;
   font-size: 15px;
   text-align: left;
   font-weight: 400;
 }
-.container #foot #f_wrap #photo_r .re_section:hover {
+#foot #f_wrap #photo_r .re_section:hover {
   padding: 30px;
   z-index: 9999;
 }
-.container #foot #f_wrap #photo_r .re_text {
+#foot #f_wrap #photo_r .re_text {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.container #foot #f_wrap #photo_r .re_text > p {
+#foot #f_wrap #photo_r .re_text > p {
   font-size: 12px;
   color: #444;
 }
-.container #foot #f_wrap #photo_r li {
+#foot #f_wrap #photo_r li {
   display: flex;
 }
-.container #foot_b {
+
+#foot_b {
   font-weight: 300;
   font-size: 15px;
   height: 15%;
@@ -450,16 +473,16 @@ main {
   align-items: flex-end;
   padding: 25px;
 }
-.container #foot_b li {
+#foot_b li {
   line-height: 1.2;
 }
-.container #foot_b li:nth-child(3) {
+#foot_b li:nth-child(3) {
   padding-top: 30px;
   color: #0011FF;
 }
-.container #foot_b #copy > ul {
+#foot_b #copy > ul {
   text-align: right;
 }
-.container #foot_b #copy > ul > li {
+#foot_b #copy > ul > li {
   line-height: 1.5;
 }/*# sourceMappingURL=style.css.map */
